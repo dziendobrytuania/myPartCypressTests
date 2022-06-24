@@ -1,0 +1,7 @@
+Contact Us Form
+
+TC01: Happy path: all mandatory fields are filled
+GIVEN: I am on a Contact Us Page
+WHEN: I fill first name, Email and Enquiry fields with valid data
+THEN: The form is succesfully send and the success message displayed 
+

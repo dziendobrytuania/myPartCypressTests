@@ -1,0 +1,17 @@
+{
+    "baseUrl": "https://automationteststore.com/",
+    "watchForFilesChanges": false,
+    "viewportHeight": 1080,
+    "viewportWidth":1920,
+    "env": {
+        "lang": "PL"
+    },
+    "reporter":"mochawesome",
+    "reporterOptions": {
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "timestamp": "isoDateTime",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      }
+}

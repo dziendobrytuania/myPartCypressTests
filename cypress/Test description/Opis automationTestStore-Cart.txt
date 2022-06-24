@@ -1,0 +1,89 @@
+Cart tests: Quantity and product name on the cart page
+
+    TC01: There are no items on the cart page by the default
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I visit the cart page
+        THEN The message 'Your shopping cart is empty!' is displayed 
+            No items are presented on the cart page
+
+    TC02: Add an item to the cart via the product page and validate it's name on the cart page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I visit a product page of the first product in the shop
+            I add this product to the cart and go to the cart page
+        THEN The added item is displayed on the cart page
+            The names of the product on the cart page and the product on the product page are the same
+
+
+    TC03: Add item to the cart via the product page and validate the quantity on the cart page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I visit a product page of the first product in the shop
+            I add this product to the cart and go to the cart page 
+        THEN The number of products on the cart page equals 1
+
+    TC04: Add an item to the cart via the home page and validate the quantity on the cart page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I add the first available product on the main page to the cart
+        THEN The number of products on the cart page equals 1
+
+
+Cart tests: Quantity and product name in the cart page
+
+    TC05: There are no items in the cart on the home page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I go to the cart icon and check the number next to it
+        THEN The number next to the cart icon equals 0
+
+    TC06: Add an item to the cart via the product page and validate the quantity in the cart on the home page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+            The number next to the cart icon is 0
+        WHEN I visit a product page of the first product in the shop
+            I add this product to the cart and go to the cart icon 
+        THEN The number next to the cart icon increased
+            The number equals 1
+
+    TC07:Add an item to the cart via the home page and validate the quantity in the cart on the home page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+            The number next to the cart icon is 0
+        WHEN I add the first available product on the main page to the basket
+        THEN The number next to the cart icon increased
+            The number equals 1
+
+
+Cart tests: Price on the cart page and next to the cart icon 
+
+    TC08:Add a product to the cart and validate the price on the cart page
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet     
+        WHEN I add the first product to my cart
+        THEN Fields 'Unit price', 'Total price' and 'Sub-total' price contain the price of the added product
+
+    TC09:Add a product to the cart and validate the price next to the cart icon
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I add the first product to my cart
+        THEN The price fields next to the cart icon contain the price of the added product
+
+    TC10:Add an item to the cart and validate that the total price of the Cart on the cart page includes shipping rate
+        GIVEN I visit the shop for the first time and have not added any items to the cart yet
+        WHEN I add the first product to my Cart
+        THEN The total price of the cart on the cart page is not the same as the single item price
+            The total page of the cart on the cart page is greater than the price of a single item
+
+    TC11:Change the quantity of products in the car and validate that it results in a new total price
+        GIVEN I have a product in my cart
+        WHEN I increase the quantity of products 
+        THEN The old total price is not the same as the new total price
+            The old total price is less than the new total price   
+            The new total price divided by the old total price equals new quantity
+
+    TC12:Change the quantity of products in the cart and validate that it does not affect the unit price
+        GIVEN I have a product in my cart
+        WHEN I increase the quantity of products
+        THEN The unit price remains the same
+
+Contact Us Form
+
+    TC01: Happy path: all mandatory fields are filled
+	GIVEN: I am on a Contact Us Page
+	WHEN: I fill first name, Email and Enquiry fields with valid data
+	THEN: The form is succesfully send and the success message displayed 
+
+
